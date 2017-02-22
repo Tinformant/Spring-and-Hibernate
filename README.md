@@ -19,6 +19,7 @@ Primary functions:
 </beans>
 ```
 2. Create a Spring Container
+
 Spring container is generally known as **ApplicationContext**.
 
 Spcialized implementations:
@@ -28,4 +29,12 @@ Spcialized implementations:
 
 ```java
 ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+```
+3. Retrieve Beans from Container 
+```java
+// Create a spring container
+ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+// Retrieve bean from spring container
+Coach theCoach = context.getBean("myCoach", Coach.class);
 ```
