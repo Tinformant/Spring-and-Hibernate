@@ -38,3 +38,20 @@ ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("app
 // Retrieve bean from spring container
 Coach theCoach = context.getBean("myCoach", Coach.class);
 ```
+
+## Dependency Injection
+The client delegates to calls to another object the responsibility of providing its dependencies.
+ 
+**Constructor Injection**
+1. Define the dependency interface and class
+```java
+public interface FortuneService {
+  public String getFortune();
+}
+
+public class HappyFortuneService implements FortuneService {
+  public String getFortune() {
+    return "No fortune";
+  }
+}
+```
